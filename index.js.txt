@@ -1,0 +1,14 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Render personal information on home and about pages
+    document.getElementById('home-name').textContent = personalInfo.name;
+    document.getElementById('home-bio').textContent = personalInfo.bio;
+
+    const bioElement = document.getElementById('about-bio');
+    if (bioElement) bioElement.textContent = personalInfo.bio;
+
+    const personalInfoElement = document.getElementById('personal-info');
+    if (personalInfoElement) {
+        personalInfoElement.innerHTML = `<li><strong>Name:</strong> ${personalInfo.name}</li>` +
+                                        `<li><strong>Skills:</strong> ${personalInfo.skills.join(', ')}</li>`;
+    }
+});
